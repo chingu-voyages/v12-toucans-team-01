@@ -22,3 +22,13 @@ h3 {
 	color: white;
 	text-shadow: 0px 0px 20px black;
 }
+
+html { 
+	background: url(https://source.unsplash.com/random/featured/?nature) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  }
+  /* other options for random image can be found at https://source.unsplash.com/
+  full screen background code from https://css-tricks.com/perfect-full-page-background-image/ */
