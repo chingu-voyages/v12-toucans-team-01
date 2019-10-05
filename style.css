@@ -5,12 +5,12 @@ h1 {
 
 h2 {
 	font-size: 45px;
-	margin: 5% auto;
+	margin: 1% auto;
 }
 
 h3 {
 	font-size: 25px;
-	margin: 0 auto;
+	margin: 1% auto;
 }
 
 .main {
@@ -23,12 +23,28 @@ h3 {
 	text-shadow: 0px 0px 20px black;
 }
 
-html { 
-	background: url(https://source.unsplash.com/random/featured/?nature) no-repeat center center fixed; 
+html {
+	background: url(https://source.unsplash.com/random/featured/?nature) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-  }
-  /* other options for random image can be found at https://source.unsplash.com/
+}
+/* other options for random image can be found at https://source.unsplash.com/
   full screen background code from https://css-tricks.com/perfect-full-page-background-image/ */
+
+#focusInput {
+	line-height: 65px;
+	width: 700px;
+	background-color: #0000004b;
+	border: none;
+	font-size: 45px;
+	color: white;
+	text-align: center;
+	border-bottom: 2px white solid;
+}
+/* im sure there are more responsive ways to size the input*/
+
+input:focus {
+	outline: none;
+}
