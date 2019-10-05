@@ -37,6 +37,9 @@ const focusDeleteButton = document.getElementById('focus-delete')
 function focusSubmit(event) {
 	event.preventDefault();
 	focusInput.style.display = 'none';
+	const value = focusInput.querySelector('input[type="text"]').value;
+	const focusItem = document.getElementById('focus-item');
+	focusItem.textContent = value;
 	focus.style.display = 'block';
 }
 
