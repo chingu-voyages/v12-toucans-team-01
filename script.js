@@ -1,3 +1,4 @@
+// Clock Feature
 var clockElement = document.getElementById('clock');
 
 function updateClock(clock) {
@@ -12,6 +13,7 @@ setInterval(function () {
 	updateClock(clockElement);
 }, 1000);
 
+// Greeting based on time of day
 var greetingTimeOfDay = document.getElementById('timeOfDay')
 var currentDate = new Date();
 var currentHr = currentDate.getHours();
@@ -26,3 +28,6 @@ if (currentHr < 12) {
 
 var name = document.getElementById('userName')
 userName.innerHTML = 'person'
+
+// Focus of the Day
+

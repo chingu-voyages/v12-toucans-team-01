@@ -65,5 +65,5 @@ input:focus {
 }
 
 @media (max-width:550px) {
-    body{font-size: 8px;}
+	body{font-size: 8px;}
 }
