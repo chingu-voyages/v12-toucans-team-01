@@ -11,17 +11,22 @@
 </head>
 
 <body>
-    <div class="main">
+    <fo class="main">
         <h1 id="clock"></h1>
         <h2 id="intro">
             Good <span id="timeOfDay"></span>, <span id="userName"></span>.
         </h2>
-        <h3>
-            What is your main focus for today?
-        </h3>
-        <input type="text" name="focus" id="focusInput">
-        <div class="focus-container" style="display: block">
-            <p>Sample</p>
+        <form id="focus-input-group">
+            <label>
+                What is your main focus for today?
+            </label>
+            <input type="text" name="focus" id="focusInput">
+        </form>
+        <div id="focus-container" style="display: none">
+            <p>Today</p>
+            <span id="focus-checkbox">&#9744;</span>
+            <span id="focus-item">Sample</span>
+            <span id="focus-delete">X</span>
         </div>
     </div>
 
