@@ -45,6 +45,7 @@ function focusSubmit(event) {
 
 function focusDelete(event) {
 	focusInput.style.display = 'block';
+	focusInput.reset();
 	focus.style.display = 'none';
 }
 
@@ -52,10 +53,14 @@ focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);
 
 // Buttons appear on hover (need to figure out how to add jquery correctly. right now it breaks the app)
-// $(document).ready(function{
-// 	$("#focus-container").hover(function{
-// 		$("#focus-delete").toggle(200);
-// 	});
-// });
+$(document).ready(function(){
+	$(".hidden").fadeTo(1000, 0);
+	$("#focus-container").hover(function(){
+		$(".hidden").fadeTo(300, 1);
+	}, function(){
+		$(".hidden").fadeTo(300, 0);
+	}
+	);
+});
 
 

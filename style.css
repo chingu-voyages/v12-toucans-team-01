@@ -64,11 +64,6 @@ input:focus {
 	font-weight: bold;
 }
 
-.hidden {
-	/* color: transparent; */
-	display: none;
-}
-
 .todo-flex {
 	display: flex;
 	justify-content: center;
