@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Momentum Clone by Toucans 01</title>
 </head>
 
@@ -24,9 +25,11 @@
         </form>
         <div id="focus-container" style="display: none">
             <p>Today</p>
-            <span id="focus-checkbox">&#9744;</span>
-            <span id="focus-item">Sample</span>
-            <span id="focus-delete">X</span>
+            <div class="todo-flex">
+                <span class="hidden" id="focus-checkbox">&#9744;</span>
+                <span id="focus-item">Sample</span>
+                <span class="hidden" id="focus-delete">X</span>
+            </div>
         </div>
     </div>
 

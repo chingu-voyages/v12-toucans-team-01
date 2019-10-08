@@ -14,7 +14,7 @@ h2 {
 }
 
 label {
-	font-size: 1.75em;
+	font-size: 2em;
 	margin: 1% auto;
 }
 
@@ -41,7 +41,7 @@ html {
   full screen background code from https://css-tricks.com/perfect-full-page-background-image/ */
 
 #focusInput {
-	line-height: 1em;
+	line-height: 1.25em;
 	width: 100%;
 	background-color: #0000004b;
 	border: none;
@@ -49,6 +49,7 @@ html {
 	color: white;
 	text-align: center;
 	border-bottom: 2px white solid;
+	margin-top: .5em;
 }
 /* im sure there are more responsive ways to size the input*/
 
@@ -56,19 +57,47 @@ input:focus {
 	outline: none;
 }
 
-#focus-container {
-	font-size: 1.75em;
-}
-
-p {
+#focus-container p {
 	margin: 0;
-	padding: 0;
-	font-size: .75em;
+	padding: .3em;
+	font-size: 1.75em;
+	font-weight: bold;
 }
 
-#focus-delete:hover {
-	cursor: pointer;
+.hidden {
+	/* color: transparent; */
+	display: none;
 }
+
+.todo-flex {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.todo-flex span {
+	align-self: center;
+	margin: 0 10px;
+	padding: 0;
+}
+
+#focus-item {
+	font-size: 2.95em;
+}
+
+#focus-checkbox {
+	font-size: 2.5em;
+	cursor: pointer;
+	text-shadow: none;
+}
+
+#focus-delete {
+	font-size: 2em;
+	cursor: pointer;
+	text-shadow: none;	
+	margin-top: .3em;
+}
+
 
 @media (max-width:850px) {
     body{font-size: 12px;}
