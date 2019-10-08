@@ -9,7 +9,7 @@ function updateClock(clock) {
 	});
 }
 
-setInterval(function () {
+setInterval(function() {
 	updateClock(clockElement);
 }, 1000);
 
@@ -19,11 +19,11 @@ var currentDate = new Date();
 var currentHr = currentDate.getHours();
 
 if (currentHr < 12) {
-	greetingTimeOfDay.innerHTML = 'Morning'
+	greetingTimeOfDay.innerHTML = 'Morning';
 } else if (currentHr < 18) {
-	greetingTimeOfDay.innerHTML = 'Afternoon'
+	greetingTimeOfDay.innerHTML = 'Afternoon';
 } else {
-	greetingTimeOfDay.innerHTML = 'Evening'
+	greetingTimeOfDay.innerHTML = 'Evening';
 }
 
 var name = document.getElementById('userName');
@@ -32,7 +32,7 @@ userName.innerHTML = 'person';
 // Focus of the Day
 const focusInput = document.getElementById('focus-input-group');
 const focus = document.getElementById('focus-container');
-const focusDeleteButton = document.getElementById('focus-delete')
+const focusDeleteButton = document.getElementById('focus-delete');
 
 function focusSubmit(event) {
 	event.preventDefault();
@@ -49,4 +49,10 @@ function focusDelete(event) {
 }
 
 focusInput.addEventListener('submit', focusSubmit);
-focusDeleteButton.addEventListener('click', focusDelete)
+focusDeleteButton.addEventListener('click', focusDelete);
+
+var cog = document.getElementById('settingsCog');
+
+cog.addEventListener('click', function() {
+	document.getElementById('settingsModal').display = block;
+});

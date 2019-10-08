@@ -25,9 +25,22 @@ label {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	text-shadow: 2px 2px 5px gray;
+	text-shadow: 0px 0px 20px rgb(0, 0, 0);
 	width: 75%;
-	max-width: 800px
+	max-width: 800px;
+}
+
+.settings-cog {
+	font-size: 1.5rem;
+	position: absolute;
+	bottom: 3%;
+	left: 3%;
+	color: rgba(255, 255, 255, 0.7);
+	text-shadow: 0px 0px 20px rgba(0, 0, 0);
+}
+
+.settings-modal {
+	display: none;
 }
 
 html {
@@ -70,14 +83,20 @@ p {
 	cursor: pointer;
 }
 
-@media (max-width:850px) {
-    body{font-size: 12px;}
+@media (max-width: 850px) {
+	body {
+		font-size: 12px;
+	}
 }
 
-@media (max-width:650px) {
-    body{font-size: 10px;}
+@media (max-width: 650px) {
+	body {
+		font-size: 10px;
+	}
 }
 
-@media (max-width:550px) {
-	body{font-size: 8px;}
+@media (max-width: 550px) {
+	body {
+		font-size: 8px;
+	}
 }
