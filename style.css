@@ -1,15 +1,20 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
 h1 {
-	font-size: 155px;
+	font-size: 10em;
 	margin: 0 auto;
 }
 
 h2 {
-	font-size: 45px;
+	font-size: 3em;
 	margin: 1% auto;
+	padding-bottom: .5em;
 }
 
-h3 {
-	font-size: 25px;
+label {
+	font-size: 1.75em;
 	margin: 1% auto;
 }
 
@@ -20,7 +25,9 @@ h3 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	text-shadow: 0px 0px 20px black;
+	text-shadow: 2px 2px 5px gray;
+	width: 75%;
+	max-width: 800px
 }
 
 html {
@@ -34,11 +41,11 @@ html {
   full screen background code from https://css-tricks.com/perfect-full-page-background-image/ */
 
 #focusInput {
-	line-height: 65px;
-	width: 700px;
+	line-height: 1em;
+	width: 100%;
 	background-color: #0000004b;
 	border: none;
-	font-size: 45px;
+	font-size: 2em;
 	color: white;
 	text-align: center;
 	border-bottom: 2px white solid;
@@ -47,4 +54,30 @@ html {
 
 input:focus {
 	outline: none;
+}
+
+#focus-container {
+	font-size: 1.75em;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	font-size: .75em;
+}
+
+#focus-delete:hover {
+	cursor: pointer;
+}
+
+@media (max-width:850px) {
+    body{font-size: 12px;}
+}
+
+@media (max-width:650px) {
+    body{font-size: 10px;}
+}
+
+@media (max-width:550px) {
+	body{font-size: 8px;}
 }
