@@ -26,8 +26,13 @@ if (currentHr < 12) {
 	greetingTimeOfDay.innerHTML = 'Evening';
 }
 
+
+$("#userNameInput").keypress(function () {
+
+})
+// var userNameInput = document.getElementById("userNameInput").value;
 var name = document.getElementById('userName');
-userName.innerHTML = 'person';
+userName.innerHTML = userNameInput;
 
 // Focus of the Day
 const focusInput = document.getElementById('focus-input-group');
