@@ -41,6 +41,14 @@ label {
 
 .settings-modal {
 	display: none;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.678);
+	float: left;
+	border-radius: 5%;
+	padding: 5% 5%;
+	position: absolute;
+	bottom: 7%;
+	left: 2%;
 }
 
 html {
@@ -50,6 +58,7 @@ html {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
 /* other options for random image can be found at https://source.unsplash.com/
   full screen background code from https://css-tricks.com/perfect-full-page-background-image/ */
 
@@ -63,6 +72,7 @@ html {
 	text-align: center;
 	border-bottom: 2px white solid;
 }
+
 /* im sure there are more responsive ways to size the input*/
 
 input:focus {

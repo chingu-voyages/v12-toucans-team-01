@@ -9,7 +9,7 @@ function updateClock(clock) {
 	});
 }
 
-setInterval(function() {
+setInterval(function () {
 	updateClock(clockElement);
 }, 1000);
 
@@ -51,8 +51,6 @@ function focusDelete(event) {
 focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);
 
-var cog = document.getElementById('settingsCog');
-
-cog.addEventListener('click', function() {
-	document.getElementById('settingsModal').display = block;
+$("#settingsCog").click(function () {
+	$("#settingsModal").fadeToggle(400)
 });
