@@ -14,9 +14,9 @@ setInterval(function () {
 }, 1000);
 
 // Greeting based on time of day
-var greetingTimeOfDay = document.getElementById('timeOfDay');
-var currentDate = new Date();
-var currentHr = currentDate.getHours();
+const greetingTimeOfDay = document.getElementById('timeOfDay');
+const currentDate = new Date();
+const currentHr = currentDate.getHours();
 
 if (currentHr < 12) {
 	greetingTimeOfDay.innerHTML = 'Morning';
@@ -26,12 +26,14 @@ if (currentHr < 12) {
 	greetingTimeOfDay.innerHTML = 'Evening';
 }
 
+var user = ""
 
 $("#userNameInput").keypress(function () {
 
+	console.log
 })
 // var userNameInput = document.getElementById("userNameInput").value;
-var name = document.getElementById('userName');
+const name = document.getElementById('userName');
 userName.innerHTML = userNameInput;
 
 // Focus of the Day
