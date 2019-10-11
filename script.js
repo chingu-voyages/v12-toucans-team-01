@@ -32,7 +32,7 @@ const name = document.getElementById('userName');
 userName.innerHTML = userNameInput;
 
 $("#userNameInput").change(function () {
-	userNameInput = .val();
+	userNameInput = $(this).val();
 	userName.innerHTML = userNameInput;
 })
 
