@@ -66,31 +66,40 @@ input:focus {
 
 .todo-flex {
 	display: flex;
-	justify-content: center;
 	align-content: center;
+	justify-content: center;
 }
 
 .todo-flex span {
 	align-self: center;
-	margin: 0 10px;
+	justify-self: center;
 	padding: 0;
 }
 
 #focus-item {
 	font-size: 2.95em;
+	margin: 0 .75em;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+#focus-checkbox, #focus-delete {
+	cursor: pointer;
 }
 
 #focus-checkbox {
 	font-size: 2.5em;
-	cursor: pointer;
-	text-shadow: none;
+}
+
+.no-display {
+	display: none;
 }
 
 #focus-delete {
-	font-size: 2em;
-	cursor: pointer;
-	text-shadow: none;	
-	margin-top: .3em;
+	margin-top: .1em;
+	font-size: 4em;
 }
 
 

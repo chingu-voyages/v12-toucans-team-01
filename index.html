@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <fo class="main">
+    <div class="main">
         <h1 id="clock"></h1>
         <h2 id="intro">
             Good <span id="timeOfDay"></span>, <span id="userName"></span>.
@@ -25,9 +25,12 @@
         <div id="focus-container" style="display: none">
             <p>Today</p>
             <div class="todo-flex">
-                <span class="hidden" id="focus-checkbox">&#9744;</span>
+                <span class="hidden" id="focus-checkbox">
+                    <span id="empty-box">&#9744;</span>
+                    <span class="no-display" id="checked-box">&#9745;</span>
+                </span>
                 <span id="focus-item">Sample</span>
-                <span class="hidden" id="focus-delete">X</span>
+                <span class="hidden" id="focus-delete">&times;</span>
             </div>
         </div>
     </div>
