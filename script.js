@@ -29,7 +29,7 @@ if (currentHr < 12) {
 var user = ""
 
 $("#userNameInput").keypress(function () {
-
+	user = $(this).val();
 	console.log
 })
 // var userNameInput = document.getElementById("userNameInput").value;
