@@ -26,15 +26,15 @@ if (currentHr < 12) {
 	greetingTimeOfDay.innerHTML = 'Evening';
 }
 
-var user = ""
-
-$("#userNameInput").keypress(function () {
-	user = $(this).val();
-	console.log
-})
-// var userNameInput = document.getElementById("userNameInput").value;
+// Username from Settings to Greeting
+const userNameInput = "human"
 const name = document.getElementById('userName');
 userName.innerHTML = userNameInput;
+
+$("#userNameInput").change(function () {
+	userNameInput = .val();
+	userName.innerHTML = userNameInput;
+})
 
 // Focus of the Day
 const focusInput = document.getElementById('focus-input-group');
@@ -58,6 +58,7 @@ function focusDelete(event) {
 focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);
 
+// Settings Cog and Modal 
 $("#settingsCog").click(function () {
 	$("#settingsModal").fadeToggle(400)
 });
