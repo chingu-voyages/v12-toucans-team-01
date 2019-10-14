@@ -27,14 +27,15 @@ if (currentHr < 12) {
 }
 
 // Username from Settings to Greeting
-const userNameInput = "human"
+
 const name = document.getElementById('userName');
-userName.innerHTML = userNameInput;
+userName.innerHTML = "human";
 
 $("#userNameInput").change(function () {
-	userNameInput = $(this).val();
+	userNameInput = $("#userNameInput").val();
 	userName.innerHTML = userNameInput;
 })
+
 
 // Focus of the Day
 const focusInput = document.getElementById('focus-input-group');
