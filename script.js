@@ -9,7 +9,7 @@ function updateClock(clock) {
 	});
 }
 
-setInterval(function () {
+setInterval(function() {
 	updateClock(clockElement);
 }, 1000);
 
@@ -29,13 +29,12 @@ if (currentHr < 12) {
 // Username from Settings to Greeting
 
 const name = document.getElementById('userName');
-userName.innerHTML = "human";
+userName.innerHTML = 'human';
 
-$("#userNameInput").change(function () {
-	userNameInput = $("#userNameInput").val();
+$('#userNameInput').change(function() {
+	userNameInput = $('#userNameInput').val();
 	userName.innerHTML = userNameInput;
-})
-
+});
 
 // Focus of the Day
 const focusInput = document.getElementById('focus-input-group');
@@ -59,7 +58,7 @@ function focusDelete(event) {
 focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);
 
-// Settings Cog and Modal 
-$("#settingsCog").click(function () {
-	$("#settingsModal").fadeToggle(400)
+// Settings Cog and Modal
+$('#settingsCog').click(function() {
+	$('#settingsModal').fadeToggle(400);
 });
