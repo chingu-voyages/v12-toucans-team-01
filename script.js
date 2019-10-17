@@ -40,20 +40,51 @@ $('#userNameInput').change(function() {
 const focusInput = document.getElementById('focus-input-group');
 const focus = document.getElementById('focus-container');
 const focusDeleteButton = document.getElementById('focus-delete');
+const focusCheck = document.getElementById('focus-checkbox');
+const focusItem = document.getElementById('focus-item');
 
 function focusSubmit(event) {
 	event.preventDefault();
 	focusInput.style.display = 'none';
 	const value = focusInput.querySelector('input[type="text"]').value;
-	const focusItem = document.getElementById('focus-item');
 	focusItem.textContent = value;
 	focus.style.display = 'block';
 }
+focusInput.addEventListener('submit', focusSubmit);
 
+// check off button 
+function focusToggle(event) {
+	focusItem.classList.toggle('strike');
+	document.getElementById('empty-box').classList.toggle('no-display');
+	document.getElementById('checked-box').classList.toggle('no-display');
+}
+focusCheck.addEventListener('click', focusToggle);
+
+// delete button
 function focusDelete(event) {
+	if (focusItem.classList.contains('strike')) {
+		focusItem.classList.toggle('strike');
+		document.getElementById('empty-box').classList.toggle('no-display');
+		document.getElementById('checked-box').classList.toggle('no-display');
+	}
 	focusInput.style.display = 'block';
+	focusInput.reset();
 	focus.style.display = 'none';
 }
+focusDeleteButton.addEventListener('click', focusDelete);
+
+
+
+// Buttons appear on hover 
+$(document).ready(function(){
+	$(".hidden").fadeTo(1000, 0);
+	$("#focus-container").hover(function(){
+		$(".hidden").fadeTo(300, 1);
+	}, function(){
+		$(".hidden").fadeTo(300, 0);
+	}
+	);
+});
 
 focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);

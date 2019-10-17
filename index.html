@@ -23,13 +23,18 @@
             <label>
                 What is your main focus for today?
             </label>
-            <input type="text" name="focus" id="focusInput">
+            <input autocomplete="off" type="text" name="focus" id="focusInput">
         </form>
         <div id="focus-container" style="display: none">
             <p>Today</p>
-            <span id="focus-checkbox">&#9744;</span>
-            <span id="focus-item">Sample</span>
-            <span id="focus-delete">X</span>
+            <div class="todo-flex">
+                <span class="hidden" id="focus-checkbox">
+                    <span id="empty-box">&#9744;</span>
+                    <span class="no-display" id="checked-box">&#9745;</span>
+                </span>
+                <span id="focus-item">Sample</span>
+                <span class="hidden" id="focus-delete">&times;</span>
+            </div>
         </div>
     </div>
     <div class="settings-cog" id="settingsCog">
@@ -47,6 +52,7 @@
         <button id="clearSettings">Clear</button> -->
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/script.js"></script>
 </body>
 
