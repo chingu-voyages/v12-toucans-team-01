@@ -116,14 +116,14 @@ input:focus {
 	position: absolute;
 	bottom: 5em;
 	right: 2em;
-	background-color: gray;
-	opacity: 75;
+	background-color: #1b1b1bce;
 	color: white;
 	width: 300px;
 	height: 50vh;
 	text-align: center;
 	border-radius: 10px;
 }
+
 
 @media (max-width:850px) {
     body{font-size: 12px;}
