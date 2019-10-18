@@ -17,7 +17,7 @@
             Good <span id="timeOfDay"></span>, <span id="userName"></span>.
         </h2>
         <form id="focus-input-group">
-            <label>
+            <label class="focus-label">
                 What is your main focus for today?
             </label>
             <input autocomplete="off" type="text" name="focus" id="focusInput">
@@ -25,12 +25,12 @@
         <div id="focus-container" style="display: none">
             <p>Today</p>
             <div class="todo-flex">
-                <span class="hidden" id="focus-checkbox">
+                <span class="js-hidden" id="focus-checkbox">
                     <span id="empty-box">&#9744;</span>
                     <span class="no-display" id="checked-box">&#9745;</span>
                 </span>
                 <span id="focus-item">Sample</span>
-                <span class="hidden" id="focus-delete">&times;</span>
+                <span class="js-hidden" id="focus-delete">&times;</span>
             </div>
         </div>
     </div>

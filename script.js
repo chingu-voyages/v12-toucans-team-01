@@ -70,11 +70,11 @@ focusDeleteButton.addEventListener('click', focusDelete);
 
 // Buttons appear on hover 
 $(document).ready(function(){
-	$(".hidden").fadeTo(1000, 0);
+	$(".js-hidden").fadeTo(1000, 0);
 	$("#focus-container").hover(function(){
-		$(".hidden").fadeTo(300, 1);
+		$(".js-hidden").fadeTo(300, 1);
 	}, function(){
-		$(".hidden").fadeTo(300, 0);
+		$(".js-hidden").fadeTo(300, 0);
 	}
 	);
 });
