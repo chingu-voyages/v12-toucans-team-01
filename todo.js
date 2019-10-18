@@ -17,9 +17,7 @@ function addTodo(text) {
             <input id="${todo.id}" type="checkbox" class="hidden"/>
             <label for="${todo.id}" class="tick js-tick">&#9744;</label>
             <span class="todo-text">${todo.text}</span>
-            <button class="delete-todo js-delete-todo">
-                <span>&times;</span>
-            </button>
+            <button class="delete-todo js-delete-todo">&times;</button>
         </li>
     `);
 }
@@ -37,17 +35,21 @@ form.addEventListener('submit', event => {
     }
 })
 
-// check off items
-// listen for click
+// listeners for checkbox and delete buttons
 const list = document.querySelector('.js-todo-list');
 list.addEventListener('click', event => {
     if (event.target.classList.contains('js-tick')) {
         const itemKey = event.target.parentElement.dataset.key;
         toggleDone(itemKey);
     }
+
+    if (event.target.classList.contains('js-delete-todo')) {
+        const itemKey = event.target.parentElement.dataset.key;
+        deleteItem(itemKey);
+    }
 })
 
-// toggle 'done' class
+// toggle 'done' class and checkbox icon
 function toggleDone(key) {
     const index = todoItems.findIndex(item => item.id === Number(key));
     todoItems[index].checked = !todoItems[index].checked;
@@ -60,8 +62,13 @@ function toggleDone(key) {
         item.classList.remove('done');
         item.querySelector('.tick').innerHTML = '&#9744;';
     }
+}
 
-
+// delete todo item
+function deleteItem(key) {
+    todoItems = todoItems.filter(item => item.id !== Number(key));
+    const item = document.querySelector(`[data-key='${key}']`);
+    item.remove();
 }
 
 // toggle todo display
