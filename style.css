@@ -149,6 +149,7 @@ input:focus {
 
 .todo-text {
 	margin: 0 auto 0 10px;
+	text-align: left;
 }
 
 button {
