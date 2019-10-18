@@ -25,9 +25,30 @@ h2 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	text-shadow: 2px 2px 5px gray;
+	text-shadow: 0px 0px 20px rgb(0, 0, 0);
 	width: 75%;
-	max-width: 800px
+	max-width: 800px;
+}
+
+.settings-cog {
+	font-size: 1.5rem;
+	position: absolute;
+	bottom: 3%;
+	left: 3%;
+	color: rgba(255, 255, 255, 0.7);
+	text-shadow: 0px 0px 20px rgba(0, 0, 0);
+}
+
+.settings-modal {
+	display: none;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.678);
+	float: left;
+	border-radius: 5%;
+	padding: 1% 1%;
+	position: absolute;
+	bottom: 7%;
+	left: 2%;
 }
 
 html {
@@ -37,6 +58,7 @@ html {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
 /* other options for random image can be found at https://source.unsplash.com/
   full screen background code from https://css-tricks.com/perfect-full-page-background-image/ */
 
@@ -51,6 +73,18 @@ html {
 	border-bottom: 2px white solid;
 	margin-top: .5em;
 }
+
+#userNameInput {
+	line-height: 1em;
+	width: 100%;
+	background-color: #0000004b;
+	border: none;
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+	margin-bottom: 4%;
+}
+
 /* im sure there are more responsive ways to size the input*/
 
 input:focus {
@@ -169,13 +203,19 @@ button {
 }
 
 @media (max-width:850px) {
-    body{font-size: 12px;}
+    body{
+      font-size: 12px;
+  }
 }
 
-@media (max-width:650px) {
-    body{font-size: 10px;}
+@media (max-width: 650px) {
+	body {
+		font-size: 10px;
+	}
 }
 
-@media (max-width:550px) {
-	body{font-size: 8px;}
+@media (max-width: 550px) {
+	body {
+		font-size: 8px;
+	}
 }
