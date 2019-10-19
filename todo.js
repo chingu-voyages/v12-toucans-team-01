@@ -1,3 +1,10 @@
+// toggle todo display
+$(document).ready(function(){
+    $('.todo-link').click(function(){
+        $('.todo-list-container').toggle(500);
+    })
+})
+
 // based on freshman.tech/todo-list
 let todoItems = [];
 
@@ -70,10 +77,3 @@ function deleteItem(key) {
     const item = document.querySelector(`[data-key='${key}']`);
     item.remove();
 }
-
-// toggle todo display
-$(document).ready(function(){
-    $('.todo-link').click(function(){
-        $('.todo-list-container').toggle(500);
-    })
-})
