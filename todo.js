@@ -77,4 +77,11 @@ function deleteItem(key) {
     todoItems = todoItems.filter(item => item.id !== Number(key));
     const item = document.querySelector(`[data-key='${key}']`);
     item.remove();
+
+    // remove whitespace
+    const list = document.querySelector('.js-todo-list');
+    if (todoItems.length === 0) list.innerHTML = '';
+
+    //focus
+    $('.js-todo-input').focus();
 }

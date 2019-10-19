@@ -25,7 +25,7 @@ h2 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	text-shadow: 0px 0px 20px rgb(0, 0, 0);
+	text-shadow: 2px 2px 5px gray;
 	width: 75%;
 	max-width: 800px;
 }
@@ -186,6 +186,20 @@ input:focus {
 	overflow: auto;
 }
 
+.empty-state {
+	font-size: 15px;
+	padding: 0 25px;
+	display: none;
+}
+
+.js-todo-list:empty {
+	display: none;
+}
+
+.js-todo-list:empty + .empty-state {
+	display: block;
+}
+
 .tick {
 	color: white;
 	cursor: pointer;
@@ -194,7 +208,7 @@ input:focus {
 .todo-item {
 	font-size: 18px;
 	display: flex;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 	align-content: center;
 }
 
