@@ -55,12 +55,12 @@
     <div class="todo">
         <div class="todo-list-container" style="display: none">
             <h3>Todo List</h3>
-            <form class="js-form">
-                <input autocomplete="off" type="text" name="todo" class="js-todo-input">
-            </form>
-            <ul class="js-todo-list">
+            <ul data-simplebar class="js-todo-list">
                 
             </ul>
+            <form class="js-form">
+                <input autocomplete="off" type="text" name="todo" class="js-todo-input" placeholder=" New Todo">
+            </form>
         </div>
         <a class="todo-link" href="#">TODO</a>
     </div>
@@ -68,6 +68,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/script.js"></script>
     <script src="/todo.js"></script>
+    
 </body>
 
 </html>

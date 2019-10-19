@@ -148,16 +148,29 @@ input:focus {
 }
 
 .todo-list-container {
-	position: absolute;
-	bottom: 5em;
+	position: fixed;
+	bottom: 3.5em;
 	right: 2em;
 	background-color: #1b1b1bce;
 	color: white;
 	width: 300px;
-	height: 50vh;
 	text-align: center;
 	border-radius: 10px;
 	font-size: 18px;
+}
+
+.js-form {
+	width: 90%;
+}
+
+.js-todo-input {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+	width: 100%;
+	padding: 10px 15px;
+	font-family: inherit;
 }
 
 .hidden {
@@ -165,8 +178,12 @@ input:focus {
 }
 
 .js-todo-list {
+	margin: 0;
 	list-style-type: none;
-	padding: 20px;
+	padding: 0 15px;
+	height: auto;
+	max-height: 70vh;
+	overflow: auto;
 }
 
 .tick {
@@ -175,7 +192,7 @@ input:focus {
 }
 
 .todo-item {
-	font-size: 20px;
+	font-size: 18px;
 	display: flex;
 	padding-bottom: 10px;
 	align-content: center;
@@ -196,6 +213,7 @@ button {
 	padding: 0;
 	margin: 0;
 	margin-left: 10px;
+	
 }
 
 .done .todo-text {

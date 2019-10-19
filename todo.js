@@ -1,7 +1,8 @@
 // toggle todo display
 $(document).ready(function(){
     $('.todo-link').click(function(){
-        $('.todo-list-container').toggle(500);
+        $('.todo-list-container').toggle(200);
+        $('.js-todo-input').focus();
     })
 })
 
