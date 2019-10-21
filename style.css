@@ -51,6 +51,11 @@ h2 {
 	left: 2%;
 }
 
+.settings {
+	padding-right: 5%;
+	font-size: 18px;
+}
+
 html {
 	background: url(https://source.unsplash.com/random/featured/?nature) no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -119,7 +124,8 @@ input:focus {
 	text-decoration: line-through;
 }
 
-#focus-checkbox, #focus-delete {
+#focus-checkbox,
+#focus-delete {
 	cursor: pointer;
 }
 
@@ -158,6 +164,7 @@ input:focus {
 	text-align: center;
 	border-radius: 10px;
 	font-size: 18px;
+	display: none;
 }
 
 .hidden {
@@ -202,10 +209,10 @@ button {
 	text-decoration: line-through;
 }
 
-@media (max-width:850px) {
-    body{
-      font-size: 12px;
-  }
+@media (max-width: 850px) {
+	body {
+		font-size: 12px;
+	}
 }
 
 @media (max-width: 650px) {
