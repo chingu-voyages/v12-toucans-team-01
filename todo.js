@@ -1,9 +1,9 @@
 // toggle todo display
-$(document).ready(function(){
-    $('.todo-link').click(function(){
-        $('.todo-list-container').toggle(200);
-        $('.js-todo-input').focus();
-    })
+$(document).ready(function () {
+	$('.todo-link').click(function () {
+		$('.todo-list-container').toggle(200);
+		$('.js-todo-input').focus();
+	})
 })
 
 // based on freshman.tech/todo-list
@@ -75,27 +75,7 @@ function toggleDone(key) {
 	}
 }
 
-// delete todo item
-function deleteItem(key) {
-
-/* commented out bc of merge conflict, looks to be older code
-  todoItems = todoItems.filter((item) => item.id !== Number(key));
-	const item = document.querySelector(`[data-key='${key}']`);
-	item.remove();
-}
-*/
-
-// toggle todo display
-$(document).ready(function() {
-	$('.todo-link').click(function() {
-		$('.todo-list-container').toggle(500);
-	});
-});
-
-//settings to show/hide todo link
-var todoSetting = true;
-
-document.getElementById('tdSet').onclick = function() {
+document.getElementById('tdSet').onclick = function () {
 	if (this.checked == false) {
 		$('.todo-link').toggle(true);
 		document.getElementById('tdSetCheck').innerHTML = '&#9744;';
@@ -105,15 +85,34 @@ document.getElementById('tdSet').onclick = function() {
 	}
 };
 
-    todoItems = todoItems.filter(item => item.id !== Number(key));
-    const item = document.querySelector(`[data-key='${key}']`);
-    item.remove();
+// delete todo item
+function deleteItem(key) {
 
-    // remove whitespace
-    const list = document.querySelector('.js-todo-list');
-    if (todoItems.length === 0) list.innerHTML = '';
+	/* commented out bc of merge conflict, looks to be older code
+	  todoItems = todoItems.filter((item) => item.id !== Number(key));
+		const item = document.querySelector(`[data-key='${key}']`);
+		item.remove();
+	}
+	*/
 
-    //focus
-    $('.js-todo-input').focus();
+	// toggle todo display
+	$(document).ready(function () {
+		$('.todo-link').click(function () {
+			$('.todo-list-container').toggle(500);
+		});
+	});
+
+	//settings to show/hide todo link
+
+
+	todoItems = todoItems.filter(item => item.id !== Number(key));
+	const item = document.querySelector(`[data-key='${key}']`);
+	item.remove();
+
+	// remove whitespace
+	const list = document.querySelector('.js-todo-list');
+	if (todoItems.length === 0) list.innerHTML = '';
+
+	//focus
+	$('.js-todo-input').focus();
 }
-

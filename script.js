@@ -3,7 +3,8 @@
 var hr12setting = true;
 const clockElement = document.getElementById('clock');
 
-document.getElementById('hr12').onclick = function() {
+document.getElementById('hr12').onclick = function () {
+	alert("clicked")
 	if (this.checked == true) {
 		hr12setting = false;
 		document.getElementById('hrSetCheck').innerHTML = '&#9745;';
@@ -21,7 +22,7 @@ function updateClock(clock) {
 	});
 }
 
-setInterval(function() {
+setInterval(function () {
 	updateClock(clockElement);
 }, 1000);
 
@@ -43,7 +44,7 @@ if (currentHr < 12) {
 const name = document.getElementById('userName');
 userName.innerHTML = 'human';
 
-$('#userNameInput').change(function() {
+$('#userNameInput').change(function () {
 	userNameInput = $('#userNameInput').val();
 	userName.innerHTML = userNameInput;
 });
@@ -86,13 +87,13 @@ function focusDelete(event) {
 focusDeleteButton.addEventListener('click', focusDelete);
 
 // Buttons appear on hover
-$(document).ready(function() {
+$(document).ready(function () {
 	$('.js-hidden').fadeTo(1000, 0);
 	$('#focus-container').hover(
-		function() {
+		function () {
 			$('.js-hidden').fadeTo(300, 1);
 		},
-		function() {
+		function () {
 			$('.js-hidden').fadeTo(300, 0);
 		}
 	);
@@ -102,6 +103,6 @@ focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);
 
 // Settings Cog and Modal
-$('#settingsCog').click(function() {
+$('#settingsCog').click(function () {
 	$('#settingsModal').toggle(500);
 });
