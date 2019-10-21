@@ -42,13 +42,18 @@ h2 {
 .settings-modal {
 	display: none;
 	color: white;
-	background-color: rgba(0, 0, 0, 0.678);
+	background-color: #1b1b1bce;
 	float: left;
 	border-radius: 5%;
-	padding: 1% 1%;
+	padding: .5% 1% 1% 1%;
 	position: absolute;
 	bottom: 7%;
 	left: 2%;
+}
+
+.settings {
+	padding-right: 5%;
+	font-size: 18px;
 }
 
 html {
@@ -119,7 +124,8 @@ input:focus {
 	text-decoration: line-through;
 }
 
-#focus-checkbox, #focus-delete {
+#focus-checkbox,
+#focus-delete {
 	cursor: pointer;
 }
 
@@ -157,6 +163,7 @@ input:focus {
 	text-align: center;
 	border-radius: 10px;
 	font-size: 18px;
+	display: none;
 }
 
 .js-form {
@@ -196,7 +203,7 @@ input:focus {
 	display: none;
 }
 
-.js-todo-list:empty + .empty-state {
+.js-todo-list:empty+.empty-state {
 	display: block;
 }
 
@@ -227,17 +234,17 @@ button {
 	padding: 0;
 	margin: 0;
 	margin-left: 10px;
-	
+
 }
 
 .done .todo-text {
 	text-decoration: line-through;
 }
 
-@media (max-width:850px) {
-    body{
-      font-size: 12px;
-  }
+@media (max-width: 850px) {
+	body {
+		font-size: 12px;
+	}
 }
 
 @media (max-width: 650px) {

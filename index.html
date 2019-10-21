@@ -45,9 +45,13 @@
         <h3>Settings
             <hr>
         </h3>
-        <input type="text" name="Name" id="userNameInput" placeholder="Your Name Here"><br>
-        <input type="checkbox" id="hr12" name="clockType">24hr Clock<br>
-        <input type="checkbox" name="showToDo">Show To Do List<br>
+        <input type="text" autocomplete="off" name="Name" id="userNameInput" placeholder="Your Name Here"><br>
+        <!-- <input type="checkbox" id="hr12" name="clockType">24hr Clock<br> -->
+        <input id="hr12" type="checkbox" class="hidden"/>
+            <label for="hr12" id="hrSetCheck" class="tick js-tick settings">&#9744;</label>24hr Clock<br>
+        <!-- <input type="checkbox" id="tdSet" name="showToDo">Hide To Do List<br> -->
+        <input id="tdSet" type="checkbox" class="hidden"/>
+            <label for="tdSet" id="tdSetCheck" class="tick js-tick settings">&#9744;</label>Hide To Do List<br>
         <!-- <button id="saveSettings">Save</button>
         <button id="clearSettings">Clear</button> -->
     </div>
