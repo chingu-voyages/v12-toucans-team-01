@@ -75,6 +75,7 @@ function toggleDone(key) {
 	}
 }
 
+//settings to show/hide todo link
 document.getElementById('tdSet').onclick = function () {
 	if (this.checked == false) {
 		$('.todo-link').toggle(true);
@@ -89,21 +90,20 @@ document.getElementById('tdSet').onclick = function () {
 function deleteItem(key) {
 
 	/* commented out bc of merge conflict, looks to be older code
-	  todoItems = todoItems.filter((item) => item.id !== Number(key));
-		const item = document.querySelector(`[data-key='${key}']`);
-		item.remove();
-	}
-	*/
 
-	// toggle todo display
-	$(document).ready(function () {
-		$('.todo-link').click(function () {
-			$('.todo-list-container').toggle(500);
+			todoItems = todoItems.filter((item) => item.id !== Number(key));
+			const item = document.querySelector(`[data-key='${key}']`);
+			item.remove();
+		}
+
+		// toggle todo display
+		$(document).ready(function () {
+			$('.todo-link').click(function () {
+				$('.todo-list-container').toggle(500);
+			});
 		});
-	});
-
-	//settings to show/hide todo link
-
+	
+	*/
 
 	todoItems = todoItems.filter(item => item.id !== Number(key));
 	const item = document.querySelector(`[data-key='${key}']`);

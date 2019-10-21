@@ -4,7 +4,6 @@ var hr12setting = true;
 const clockElement = document.getElementById('clock');
 
 document.getElementById('hr12').onclick = function () {
-	alert("clicked")
 	if (this.checked == true) {
 		hr12setting = false;
 		document.getElementById('hrSetCheck').innerHTML = '&#9745;';
@@ -104,5 +103,5 @@ focusDeleteButton.addEventListener('click', focusDelete);
 
 // Settings Cog and Modal
 $('#settingsCog').click(function () {
-	$('#settingsModal').toggle(500);
+	$('#settingsModal').toggle(200);
 });
