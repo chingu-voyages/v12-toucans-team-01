@@ -1,3 +1,11 @@
+// toggle todo display
+$(document).ready(function(){
+    $('.todo-link').click(function(){
+        $('.todo-list-container').toggle(200);
+        $('.js-todo-input').focus();
+    })
+})
+
 // based on freshman.tech/todo-list
 let todoItems = [];
 
@@ -69,11 +77,11 @@ function deleteItem(key) {
     todoItems = todoItems.filter(item => item.id !== Number(key));
     const item = document.querySelector(`[data-key='${key}']`);
     item.remove();
-}
 
-// toggle todo display
-$(document).ready(function(){
-    $('.todo-link').click(function(){
-        $('.todo-list-container').toggle(500);
-    })
-})
+    // remove whitespace
+    const list = document.querySelector('.js-todo-list');
+    if (todoItems.length === 0) list.innerHTML = '';
+
+    //focus
+    $('.js-todo-input').focus();
+}
