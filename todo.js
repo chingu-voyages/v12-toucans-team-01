@@ -6,8 +6,28 @@ $(document).ready(function () {
 	})
 })
 
-// based on freshman.tech/todo-list
-let todoItems = [];
+// based on freshman.tech/todo-list and https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+
+// load array from local storage or set as blank array
+let todoItems 
+
+if (localStorage.getItem('items')) {
+    todoItems = JSON.parse(localStorage.getItem('items'));
+
+    // iterate over existing items
+    todoItems.forEach(addLi);
+    todoItems.forEach(updateChecks);
+    function updateChecks(item){
+        if (item.checked === true) {
+            let li = document.querySelector(`[data-key='${item.id}']`);
+            console.log(li);
+            li.classList.add('done');
+	        li.querySelector('.tick').innerHTML = '&#9745;';
+        }
+    }
+} else {
+    todoItems = [];
+}
 
 function addTodo(text) {
 	const todo = {
@@ -16,9 +36,17 @@ function addTodo(text) {
 		id: Date.now()
 	};
 
-	todoItems.push(todo);
+    // save to array
+    todoItems.push(todo);
+    // save to local storage
+    localStorage.setItem('items', JSON.stringify(todoItems));
 
-	//add todo li elements
+    addLi(todo);
+	
+}
+
+function addLi(todo){
+    //add todo li elements
 	const list = document.querySelector('.js-todo-list');
 	list.insertAdjacentHTML(
 		'beforeend',
@@ -60,15 +88,17 @@ list.addEventListener('click', (event) => {
 	}
 });
 
-// toggle 'done' class and checkbox icon
+// toggle checked state
 function toggleDone(key) {
 	const index = todoItems.findIndex((item) => item.id === Number(key));
-	todoItems[index].checked = !todoItems[index].checked;
-
-	const item = document.querySelector(`[data-key='${key}']`);
+    todoItems[index].checked = !todoItems[index].checked;
+    // save to local storage
+    localStorage.setItem('items', JSON.stringify(todoItems));
+    
+    const item = document.querySelector(`[data-key='${key}']`);
 	if (todoItems[index].checked) {
 		item.classList.add('done');
-		item.querySelector('.tick').innerHTML = '&#9745;';
+	    item.querySelector('.tick').innerHTML = '&#9745;';
 	} else {
 		item.classList.remove('done');
 		item.querySelector('.tick').innerHTML = '&#9744;';
@@ -89,25 +119,12 @@ document.getElementById('tdSet').onclick = function () {
 // delete todo item
 function deleteItem(key) {
 
-	/* commented out bc of merge conflict, looks to be older code
-
-			todoItems = todoItems.filter((item) => item.id !== Number(key));
-			const item = document.querySelector(`[data-key='${key}']`);
-			item.remove();
-		}
-
-		// toggle todo display
-		$(document).ready(function () {
-			$('.todo-link').click(function () {
-				$('.todo-list-container').toggle(500);
-			});
-		});
-	
-	*/
-
 	todoItems = todoItems.filter(item => item.id !== Number(key));
 	const item = document.querySelector(`[data-key='${key}']`);
-	item.remove();
+    item.remove();
+    
+    // update local storage
+    localStorage.setItem('items', JSON.stringify(todoItems));
 
 	// remove whitespace
 	const list = document.querySelector('.js-todo-list');
