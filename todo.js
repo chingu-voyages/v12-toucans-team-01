@@ -1,32 +1,32 @@
 // toggle todo display
-$(document).ready(function () {
-	$('.todo-link').click(function () {
+$(document).ready(function() {
+	$('.todo-link').click(function() {
 		$('.todo-list-container').toggle(200);
 		$('.js-todo-input').focus();
-	})
-})
+	});
+});
 
 // based on freshman.tech/todo-list and https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
 
 // load array from local storage or set as blank array
-let todoItems 
+let todoItems;
 
 if (localStorage.getItem('items')) {
-    todoItems = JSON.parse(localStorage.getItem('items'));
+	todoItems = JSON.parse(localStorage.getItem('items'));
 
-    // iterate over existing items
-    todoItems.forEach(addLi);
-    todoItems.forEach(updateChecks);
-    function updateChecks(item){
-        if (item.checked === true) {
-            let li = document.querySelector(`[data-key='${item.id}']`);
-            console.log(li);
-            li.classList.add('done');
-	        li.querySelector('.tick').innerHTML = '&#9745;';
-        }
-    }
+	// iterate over existing items
+	todoItems.forEach(addLi);
+	todoItems.forEach(updateChecks);
+	function updateChecks(item) {
+		if (item.checked === true) {
+			let li = document.querySelector(`[data-key='${item.id}']`);
+			console.log(li);
+			li.classList.add('done');
+			li.querySelector('.tick').innerHTML = '&#9745;';
+		}
+	}
 } else {
-    todoItems = [];
+	todoItems = [];
 }
 
 function addTodo(text) {
@@ -36,17 +36,16 @@ function addTodo(text) {
 		id: Date.now()
 	};
 
-    // save to array
-    todoItems.push(todo);
-    // save to local storage
-    localStorage.setItem('items', JSON.stringify(todoItems));
+	// save to array
+	todoItems.push(todo);
+	// save to local storage
+	localStorage.setItem('items', JSON.stringify(todoItems));
 
-    addLi(todo);
-	
+	addLi(todo);
 }
 
-function addLi(todo){
-    //add todo li elements
+function addLi(todo) {
+	//add todo li elements
 	const list = document.querySelector('.js-todo-list');
 	list.insertAdjacentHTML(
 		'beforeend',
@@ -91,14 +90,14 @@ list.addEventListener('click', (event) => {
 // toggle checked state
 function toggleDone(key) {
 	const index = todoItems.findIndex((item) => item.id === Number(key));
-    todoItems[index].checked = !todoItems[index].checked;
-    // save to local storage
-    localStorage.setItem('items', JSON.stringify(todoItems));
-    
-    const item = document.querySelector(`[data-key='${key}']`);
+	todoItems[index].checked = !todoItems[index].checked;
+	// save to local storage
+	localStorage.setItem('items', JSON.stringify(todoItems));
+
+	const item = document.querySelector(`[data-key='${key}']`);
 	if (todoItems[index].checked) {
 		item.classList.add('done');
-	    item.querySelector('.tick').innerHTML = '&#9745;';
+		item.querySelector('.tick').innerHTML = '&#9745;';
 	} else {
 		item.classList.remove('done');
 		item.querySelector('.tick').innerHTML = '&#9744;';
@@ -106,25 +105,36 @@ function toggleDone(key) {
 }
 
 //settings to show/hide todo link
-document.getElementById('tdSet').onclick = function () {
+let tdSet = 'true' == localStorage.getItem('tdSet');
+if (tdSet == true) {
+	$('.todo-link').toggle(tdSet);
+	document.getElementById('tdSetCheck').innerHTML = '&#9744;';
+} else {
+	$('.todo-link').toggle(tdSet);
+	document.getElementById('tdSetCheck').innerHTML = '&#9745;';
+}
+document.getElementById('tdSet').onclick = function() {
 	if (this.checked == false) {
-		$('.todo-link').toggle(true);
+		tdSet = true;
+		$('.todo-link').toggle(tdSet);
+		localStorage.setItem('tdSet', true);
 		document.getElementById('tdSetCheck').innerHTML = '&#9744;';
 	} else {
-		$('.todo-link').toggle(false);
+		tdSet = false;
+		$('.todo-link').toggle(tdSet);
+		localStorage.setItem('tdSet', false);
 		document.getElementById('tdSetCheck').innerHTML = '&#9745;';
 	}
 };
 
 // delete todo item
 function deleteItem(key) {
-
-	todoItems = todoItems.filter(item => item.id !== Number(key));
+	todoItems = todoItems.filter((item) => item.id !== Number(key));
 	const item = document.querySelector(`[data-key='${key}']`);
-    item.remove();
-    
-    // update local storage
-    localStorage.setItem('items', JSON.stringify(todoItems));
+	item.remove();
+
+	// update local storage
+	localStorage.setItem('items', JSON.stringify(todoItems));
 
 	// remove whitespace
 	const list = document.querySelector('.js-todo-list');

@@ -1,14 +1,21 @@
 // Clock Feature
 
-var hr12setting = true;
+let hr12setting = 'true' == localStorage.getItem('hr12setting');
+if (hr12setting == false) {
+	document.getElementById('hrSetCheck').innerHTML = '&#9745;';
+} else {
+	document.getElementById('hrSetCheck').innerHTML = '&#9744;';
+}
 const clockElement = document.getElementById('clock');
 
-document.getElementById('hr12').onclick = function () {
+document.getElementById('hr12').onclick = function() {
 	if (this.checked == true) {
 		hr12setting = false;
+		localStorage.setItem('hr12setting', false);
 		document.getElementById('hrSetCheck').innerHTML = '&#9745;';
 	} else {
 		hr12setting = true;
+		localStorage.setItem('hr12setting', true);
 		document.getElementById('hrSetCheck').innerHTML = '&#9744;';
 	}
 };
@@ -21,7 +28,7 @@ function updateClock(clock) {
 	});
 }
 
-setInterval(function () {
+setInterval(function() {
 	updateClock(clockElement);
 }, 1000);
 
@@ -40,12 +47,15 @@ if (currentHr < 12) {
 
 // Username from Settings to Greeting
 
-const name = document.getElementById('userName');
-userName.innerHTML = 'human';
-
-$('#userNameInput').change(function () {
+userName.innerHTML = localStorage.getItem('userName');
+if (userName.innerHTML == null || userName.innerHTML == '') {
+	userName.innerHTML = 'human';
+	localStorage.setItem('userName', 'human');
+}
+$('#userNameInput').change(function() {
 	userNameInput = $('#userNameInput').val();
 	userName.innerHTML = userNameInput;
+	localStorage.setItem('userName', userNameInput);
 });
 
 // Focus of the Day
@@ -86,13 +96,13 @@ function focusDelete(event) {
 focusDeleteButton.addEventListener('click', focusDelete);
 
 // Buttons appear on hover
-$(document).ready(function () {
+$(document).ready(function() {
 	$('.js-hidden').fadeTo(1000, 0);
 	$('#focus-container').hover(
-		function () {
+		function() {
 			$('.js-hidden').fadeTo(300, 1);
 		},
-		function () {
+		function() {
 			$('.js-hidden').fadeTo(300, 0);
 		}
 	);
@@ -102,6 +112,6 @@ focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);
 
 // Settings Cog and Modal
-$('#settingsCog').click(function () {
+$('#settingsCog').click(function() {
 	$('#settingsModal').toggle(200);
 });
