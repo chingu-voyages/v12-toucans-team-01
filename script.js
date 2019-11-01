@@ -48,15 +48,14 @@ if (currentHr < 12) {
 // Username from Settings to Greeting
 
 userName.innerHTML = localStorage.getItem('userName');
+if (userName.innerHTML == null || userName.innerHTML == '') {
+	userName.innerHTML = 'human';
+	localStorage.setItem('userName', 'human');
+}
 $('#userNameInput').change(function() {
-	if (userName.innerHTML == null || userName.innerHTML == '') {
-		userName.innerHTML = 'human';
-		localStorage.setItem('userName', 'human');
-	} else {
-		userNameInput = $('#userNameInput').val();
-		userName.innerHTML = userNameInput;
-		localStorage.setItem('userName', userNameInput);
-	}
+	userNameInput = $('#userNameInput').val();
+	userName.innerHTML = userNameInput;
+	localStorage.setItem('userName', userNameInput);
 });
 
 // Focus of the Day
