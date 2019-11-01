@@ -64,12 +64,18 @@ const focus = document.getElementById('focus-container');
 const focusDeleteButton = document.getElementById('focus-delete');
 const focusCheck = document.getElementById('focus-checkbox');
 const focusItem = document.getElementById('focus-item');
+if (localStorage.getItem('focusValue')) {
+	focus.style.display = 'block';
+	focusInput.style.display = 'none';
+	focusItem.textContent = localStorage.getItem('focusValue');
+}
 
 function focusSubmit(event) {
 	event.preventDefault();
 	focusInput.style.display = 'none';
 	const value = focusInput.querySelector('input[type="text"]').value;
 	focusItem.textContent = value;
+	localStorage.setItem('focusValue', value);
 	focus.style.display = 'block';
 }
 focusInput.addEventListener('submit', focusSubmit);
