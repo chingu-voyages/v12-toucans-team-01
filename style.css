@@ -142,6 +142,26 @@ input:focus {
 	font-size: 4em;
 }
 
+/* Weather */
+.weather-container {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: white;
+	text-shadow: 2px 2px 5px gray;
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+
+.weather-container div p{
+	margin: 0;
+}
+
+.weather-icon img{
+	filter: drop-shadow(2px 2px 5px gray);
+}
+
 /* Todo List */
 .todo-link {
 	position: absolute;
