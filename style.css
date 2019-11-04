@@ -37,6 +37,7 @@ h2 {
 	left: 3%;
 	color: rgba(255, 255, 255, 0.7);
 	text-shadow: 0px 0px 20px rgba(0, 0, 0);
+	cursor: pointer;
 }
 
 .settings-modal {
@@ -154,12 +155,28 @@ input:focus {
 	margin: 0;
 }
 
+.weather-modal {
+	display: none;
+	color: white;
+	background-color: #1b1b1bce;
+	float: right;
+	border-radius: 5%;
+	padding: .5% 1% 1% 1%;
+	position: absolute;
+	top: 80px;
+	right: 20px;
+	font-size: 18px;
+	text-align: center;
+}
+
 .weather-container div p{
 	margin: 0;
 }
 
 .weather-icon img{
 	filter: drop-shadow(2px 2px 5px gray);
+	cursor: pointer;
+
 }
 
 /* Todo List */

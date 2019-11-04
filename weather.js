@@ -7,6 +7,7 @@ const iconElement = document.querySelector(".weather-icon");
 const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
 const locationElement = document.querySelector(".location p");
+const weatherModal = document.querySelector(".weather-modal");
 
 // app data
 const weather = {};
@@ -38,7 +39,8 @@ window.addEventListener('load', ()=> {
                 })
                 // store weather data from api
                 .then(data => {
-                    weather.temperature.value = Math.floor(data.main.temp - KELVIN);
+                    weather.temperature.celsius = Math.floor(data.main.temp - KELVIN);
+                    weather.temperature.fahrenheit = Math.floor(weather.temperature.celsius * 9/5 + 32);
                     weather.description = data.weather[0].description;
                     weather.iconId = data.weather[0].icon;
                     weather.city = data.name;
@@ -47,7 +49,7 @@ window.addEventListener('load', ()=> {
                 // display data to DOM
                 .then(function(){
                     iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
-                    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+                    tempElement.innerHTML = `${weather.temperature.fahrenheit} °F / ${weather.temperature.celsius} °C`;
                     descElement.innerHTML = weather.description;
                     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
                 });
@@ -58,3 +60,8 @@ window.addEventListener('load', ()=> {
 
     
 });
+
+// display on hover
+$('.weather-container').click(function () {
+    $('.weather-modal').toggle(200);
+})
