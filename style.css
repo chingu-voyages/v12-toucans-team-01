@@ -33,10 +33,11 @@ h2 {
 .settings-cog {
 	font-size: 1.5rem;
 	position: absolute;
-	bottom: 3%;
-	left: 3%;
+	bottom: 10px;
+	left: 20px;
 	color: rgba(255, 255, 255, 0.7);
 	text-shadow: 0px 0px 20px rgba(0, 0, 0);
+	cursor: pointer;
 }
 
 .settings-modal {
@@ -47,8 +48,8 @@ h2 {
 	border-radius: 5%;
 	padding: .5% 1% 1% 1%;
 	position: absolute;
-	bottom: 7%;
-	left: 2%;
+	bottom: 50px;
+	left: 20px;
 }
 
 .settings {
@@ -142,10 +143,46 @@ input:focus {
 	font-size: 4em;
 }
 
+/* Weather */
+.weather-container {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: white;
+	text-shadow: 2px 2px 5px gray;
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+
+.weather-modal {
+	display: none;
+	color: white;
+	background-color: #1b1b1bce;
+	float: right;
+	border-radius: 5%;
+	padding: .5% 1% 1% 1%;
+	position: absolute;
+	top: 85px;
+	right: 20px;
+	font-size: 18px;
+	text-align: center;
+}
+
+.weather-container div p{
+	margin: 0;
+}
+
+.weather-icon img{
+	filter: drop-shadow(2px 2px 5px gray);
+	cursor: pointer;
+
+}
+
 /* Todo List */
 .todo-link {
 	position: absolute;
-	bottom: 20px;
+	bottom: 10px;
 	right: 20px;
 	color: white;
 	text-shadow: 2px 2px 5px gray;
@@ -155,8 +192,8 @@ input:focus {
 
 .todo-list-container {
 	position: fixed;
-	bottom: 3.5em;
-	right: 2em;
+	bottom: 50px;
+	right: 20px;
 	background-color: #1b1b1bce;
 	color: white;
 	width: 300px;
