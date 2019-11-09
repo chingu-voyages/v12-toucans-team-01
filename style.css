@@ -91,8 +91,6 @@ html {
 	margin-bottom: 4%;
 }
 
-/* im sure there are more responsive ways to size the input*/
-
 input:focus {
 	outline: none;
 }
@@ -267,7 +265,7 @@ input:focus {
 	display: none;
 }
 
-.js-todo-list:empty+.empty-state {
+.js-todo-list:empty + .empty-state {
 	display: block;
 }
 
@@ -298,7 +296,6 @@ button {
 	padding: 0;
 	margin: 0;
 	margin-left: 10px;
-
 }
 
 .done .todo-text {
