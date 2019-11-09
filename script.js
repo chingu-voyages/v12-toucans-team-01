@@ -1,9 +1,10 @@
 // Clock Feature
-if (localStorage.getItem('hr12setting') == null) {
-	hr12setting = false;
+let hr12setting;
+if (!localStorage.getItem('hr12setting')) {
+	hr12setting = true;
+} else {
+	hr12setting = localStorage.getItem('hr12setting');
 }
-
-let hr12setting = 'true' == localStorage.getItem('hr12setting');
 if (hr12setting == false) {
 	document.getElementById('hrSetCheck').innerHTML = '&#9745;';
 } else {
