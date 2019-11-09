@@ -20,7 +20,6 @@ if (localStorage.getItem('items')) {
 	function updateChecks(item) {
 		if (item.checked === true) {
 			let li = document.querySelector(`[data-key='${item.id}']`);
-			console.log(li);
 			li.classList.add('done');
 			li.querySelector('.tick').innerHTML = '&#9745;';
 		}
