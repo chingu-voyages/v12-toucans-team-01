@@ -8,7 +8,7 @@ if (hr12setting == false) {
 }
 const clockElement = document.getElementById('clock');
 
-document.getElementById('hr12').onclick = function() {
+document.getElementById('hr12').onclick = function () {
 	if (this.checked == true) {
 		hr12setting = false;
 		localStorage.setItem('hr12setting', false);
@@ -28,7 +28,7 @@ function updateClock(clock) {
 	});
 }
 
-setInterval(function() {
+setInterval(function () {
 	updateClock(clockElement);
 }, 1000);
 
@@ -52,7 +52,7 @@ if (userName.innerHTML == null || userName.innerHTML == '') {
 	userName.innerHTML = 'human';
 	localStorage.setItem('userName', 'human');
 }
-$('#userNameInput').change(function() {
+$('#userNameInput').change(function () {
 	userNameInput = $('#userNameInput').val();
 	userName.innerHTML = userNameInput;
 	localStorage.setItem('userName', userNameInput);
@@ -102,13 +102,13 @@ function focusDelete(event) {
 focusDeleteButton.addEventListener('click', focusDelete);
 
 // Buttons appear on hover
-$(document).ready(function() {
+$(document).ready(function () {
 	$('.js-hidden').fadeTo(1000, 0);
 	$('#focus-container').hover(
-		function() {
+		function () {
 			$('.js-hidden').fadeTo(300, 1);
 		},
-		function() {
+		function () {
 			$('.js-hidden').fadeTo(300, 0);
 		}
 	);
@@ -118,6 +118,10 @@ focusInput.addEventListener('submit', focusSubmit);
 focusDeleteButton.addEventListener('click', focusDelete);
 
 // Settings Cog and Modal
-$('#settingsCog').click(function() {
+$('#settingsCog').click(function () {
 	$('#settingsModal').toggle(200);
+});
+
+$('#team-icon').click(function () {
+	$('.team-modal').toggle(200);
 });

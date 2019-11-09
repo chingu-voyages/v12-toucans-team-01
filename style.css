@@ -169,14 +169,41 @@ input:focus {
 	text-align: center;
 }
 
-.weather-container div p{
+.weather-container div p {
 	margin: 0;
 }
 
-.weather-icon img{
+.weather-icon img {
 	filter: drop-shadow(2px 2px 5px gray);
 	cursor: pointer;
+}
 
+.team-icon img {
+	filter: drop-shadow(2px 2px 5px gray);
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 40px;
+}
+
+.team-modal {
+	font-size: 1rem;
+	color: white;
+	background-color: #1b1b1bce;
+	float: left;
+	border-radius: 5%;
+	padding: 0% 1% 0% 1%;
+	position: absolute;
+	top: 80px;
+	left: 20px;
+	width: 18%;
+	display: none;
+}
+
+.team-modal img {
+	float: right;
+	height: 1.4rem;
 }
 
 /* Todo List */
