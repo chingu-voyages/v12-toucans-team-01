@@ -104,9 +104,11 @@ function toggleDone(key) {
 }
 
 //settings to show/hide todo link
+
 let showTd;
 if (localStorage.getItem('showTd') == null) {
 	showTd = "true";
+
 } else {
 	showTd = localStorage.getItem('showTd');
 }
