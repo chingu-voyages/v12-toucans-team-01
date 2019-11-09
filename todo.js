@@ -104,24 +104,28 @@ function toggleDone(key) {
 }
 
 //settings to show/hide todo link
-let tdSet = 'true' == localStorage.getItem('tdSet');
-if (tdSet == true) {
-	$('.todo-link').toggle(tdSet);
-	document.getElementById('tdSetCheck').innerHTML = '&#9744;';
+
+let showTd;
+if (localStorage.getItem('showTd') == null) {
+	showTd = "true";
+
 } else {
-	$('.todo-link').toggle(tdSet);
-	document.getElementById('tdSetCheck').innerHTML = '&#9745;';
+	showTd = localStorage.getItem('showTd');
 }
+if (showTd == "false") {
+	$('.todo-link').hide();
+	document.getElementById('tdSetCheck').innerHTML = '&#9745;';
+} 
 document.getElementById('tdSet').onclick = function() {
 	if (this.checked == false) {
-		tdSet = true;
-		$('.todo-link').toggle(tdSet);
-		localStorage.setItem('tdSet', true);
+		showTd = true;
+		$('.todo-link').show();
+		localStorage.setItem('showTd', true);
 		document.getElementById('tdSetCheck').innerHTML = '&#9744;';
 	} else {
-		tdSet = false;
-		$('.todo-link').toggle(tdSet);
-		localStorage.setItem('tdSet', false);
+		showTd = false;
+		$('.todo-link').hide();
+		localStorage.setItem('showTd', false);
 		document.getElementById('tdSetCheck').innerHTML = '&#9745;';
 	}
 };
