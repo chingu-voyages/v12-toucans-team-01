@@ -104,6 +104,10 @@ function toggleDone(key) {
 }
 
 //settings to show/hide todo link
+if (localStorage.getItem('tdSet') == null) {
+	tdSet = false;
+}
+
 let tdSet = 'true' == localStorage.getItem('tdSet');
 if (tdSet == true) {
 	$('.todo-link').toggle(tdSet);

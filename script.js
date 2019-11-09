@@ -1,4 +1,7 @@
 // Clock Feature
+if (localStorage.getItem('hr12setting') == null) {
+	hr12setting = false;
+}
 
 let hr12setting = 'true' == localStorage.getItem('hr12setting');
 if (hr12setting == false) {
