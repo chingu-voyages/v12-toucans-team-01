@@ -13,6 +13,10 @@ h2 {
 	padding-bottom: .5em;
 }
 
+hr {
+	border-style: solid;
+}
+
 .focus-label {
 	font-size: 2em;
 	margin: 1% auto;
