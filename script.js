@@ -125,3 +125,15 @@ $('#settingsCog').click(function () {
 $('#team-icon').click(function () {
 	$('.team-modal').toggle(200);
 });
+
+// close out of any modal if clicking outside
+$(document).click(function(e) {
+	const allModals = $('#settingsModal, .team-modal, .weather-modal, .todo-list-container');
+	const allClickZones = $('.todo-link, .todo-flex, .settings-cog, .weather-container, .team-container, #settingsModal, .team-modal, .weather-modal, .todo-list-container')
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!allClickZones.is(e.target) && allClickZones.has(e.target).length === 0) 
+    {
+        allModals.hide(200);
+    }
+});
